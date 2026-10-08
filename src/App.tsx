@@ -115,12 +115,12 @@ function App() {
               <p className="section-subtitle">Focused on what matters: is it reachable, is it fast, and will anything expire soon.</p>
             </div>
             <div className="feature-grid">
-              <FeatureCard icon="fas fa-globe" title="Multi-location checks" desc="Every check runs from all your locations. A single network hiccup won't wake you up." />
-              <FeatureCard icon="fas fa-search" title="Smart HTTP checks" desc="Verify status codes and search for specific text on the page." />
-              <FeatureCard icon="fas fa-stopwatch" title="Response breakdown" desc="See where time goes: DNS, connection, TLS, first byte and download per location." />
-              <FeatureCard icon="fas fa-lock" title="Expiry tracking" desc="Get warned before SSL certificates or domains expire." />
-              <FeatureCard icon="fas fa-exchange-alt" title="DNS & TCP ports" desc="Check DNS records and test that mail or database ports accept connections." />
-              <FeatureCard icon="fas fa-chart-bar" title="Analytics & reports" desc="Apdex scores, uptime history, and exportable monthly reports." />
+              <FeatureCard icon="fas fa-globe" title="Multi-Location Monitoring" desc="Every check runs across multiple global locations with cross-verification, ensuring isolated network hiccups never trigger false alarms." />
+              <FeatureCard icon="fas fa-search" title="Smart HTTP(S) & Content Checks" desc="Verify status codes, confirm specific on-page keywords, and set custom check intervals flexibly from every 60 seconds up to once a day." />
+              <FeatureCard icon="fas fa-stopwatch" title="Response Time Breakdown" desc="Pinpoint latency per location with step-by-step metrics: DNS lookup, TCP connection, TLS handshake, time to first byte (TTFB), and full download." />
+              <FeatureCard icon="fas fa-lock" title="SSL & Domain Expiry Tracking" desc="Track domain registration via RDAP and get alerts days in advance with custom warning thresholds before your SSL certificates or domains expire." />
+              <FeatureCard icon="fas fa-exchange-alt" title="DNS & Port Monitoring" desc="Validate DNS records against expected values and continuously test critical mail, database, or TCP ports for open connections." />
+              <FeatureCard icon="fas fa-chart-bar" title="Analytics & Exportable Reports" desc="Monitor daily uptime, speed, and Apdex scores with 6 months of historical data; export client-ready monthly reports in CSV or PDF." />
             </div>
           </div>
         </section>

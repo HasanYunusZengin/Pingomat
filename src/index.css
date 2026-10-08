@@ -500,19 +500,16 @@ a {
 
 /* Features */
 .feature-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 18px;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
 }
 
 .feature-card {
-  flex: 1 1 300px;
-  max-width: 340px;
   background: #fff;
   border: 1px solid var(--line);
-  border-radius: 10px;
-  padding: 22px;
+  border-radius: 12px;
+  padding: 28px;
   transition: all 0.25s ease;
   position: relative;
   overflow: hidden;
@@ -857,6 +854,10 @@ a {
     min-height: 400px;
     padding: 30px 20px;
   }
+  .feature-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
 }
 
 @media (max-width: 860px) {
@@ -869,6 +870,10 @@ a {
   .header-inner {
     justify-content: space-between;
     padding: 0 20px;
+  }
+  .feature-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
   }
   .steps-grid {
     grid-template-columns: 1fr;
