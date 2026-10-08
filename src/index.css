@@ -182,7 +182,7 @@ a {
 /* Hero - Starts from top, no white space */
 .hero {
   background: linear-gradient(135deg, #139a56 0%, #1fb86b 40%, #22c55e 100%);
-  padding: 0;
+  padding: 110px 0 0 0;
   overflow: hidden;
   position: relative;
 }
