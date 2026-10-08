@@ -400,17 +400,16 @@ a {
 
 .strip {
   display: flex;
-  gap: 3px;
-  height: 32px;
-  align-items: flex-end;
+  gap: 2px;
+  height: 18px;
+  align-items: center;
 }
 
 .strip i {
   flex: 1;
-  border-radius: 4px;
+  border-radius: 2px;
   background: var(--primary);
   transition: all 0.2s ease;
-  min-height: 6px;
 }
 
 .strip i.r {
