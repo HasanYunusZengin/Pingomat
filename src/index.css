@@ -198,17 +198,11 @@ a {
   pointer-events: none;
 }
 
-.hero-split {
-  display: grid;
-  grid-template-columns: 1fr 1.5fr;
-  max-width: 1600px;
+.hero-content {
+  max-width: 800px;
   margin: 0 auto;
-  position: relative;
-  z-index: 1;
-}
-
-.hero-text {
-  padding: 0 20px 60px 40px;
+  padding: 0 24px 60px;
+  text-align: center;
   position: relative;
   z-index: 2;
 }
@@ -243,8 +237,8 @@ a {
 .hero-lead {
   font-size: 17px;
   color: rgba(255, 255, 255, 0.88);
-  max-width: 460px;
-  margin: 0 0 30px;
+  max-width: 600px;
+  margin: 0 auto 30px;
   line-height: 1.7;
 }
 
@@ -252,6 +246,7 @@ a {
   display: flex;
   gap: 12px;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .hero-cta .btn-primary {
@@ -276,23 +271,7 @@ a {
   background: rgba(255,255,255,0.1);
 }
 
-/* Hero Map */
-.hero-map {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0 40px 40px 20px;
-  overflow: visible;
-}
-
-.map-svg {
-  width: 100%;
-  height: auto;
-  display: block;
-  position: relative;
-  z-index: 1;
-}
+/* Hero Map - Removed */
 
 /* Dashboard */
 .dashboard-section {
@@ -830,23 +809,6 @@ a {
 
 /* Responsive */
 @media (max-width: 1024px) {
-  .hero-split {
-    grid-template-columns: 1fr;
-  }
-  .hero-text {
-    padding: 0 24px 40px;
-    text-align: center;
-  }
-  .hero-lead {
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .hero-cta {
-    justify-content: center;
-  }
-  .hero-map {
-    padding: 20px 20px 40px;
-  }
   .feature-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
@@ -863,10 +825,6 @@ a {
   .header-inner {
     justify-content: space-between;
     padding: 0 20px;
-  }
-  .feature-grid {
-    grid-template-columns: 1fr;
-    gap: 16px;
   }
   .steps-grid {
     grid-template-columns: 1fr;
@@ -885,21 +843,76 @@ a {
   .dashboard-header {
     flex-direction: column;
     align-items: flex-start;
+    padding: 20px;
+  }
+  .dashboard-status {
+    font-size: 14px;
   }
   .dashboard-stats {
     width: 100%;
     justify-content: space-around;
+    gap: 20px;
+  }
+  .stat-value {
+    font-size: 20px;
+  }
+  .stat-label {
+    font-size: 11px;
+  }
+  .dashboard-mock {
+    overflow-x: auto;
+  }
+  .dashboard-content {
+    min-width: 500px;
   }
   .dash-row {
     grid-template-columns: 70px 1fr 90px;
-    padding: 16px 20px;
-    gap: 12px;
+    padding: 14px 16px;
+    gap: 10px;
+    font-size: 13px;
   }
   .dash-row .strip {
     display: none;
   }
+  .service-info b {
+    font-size: 14px;
+  }
+  .service-info small {
+    font-size: 11px;
+  }
+  .uptime-num {
+    font-size: 14px;
+  }
   .section {
     padding: 56px 0;
+  }
+}
+
+/* Mobile: Feature cards horizontal carousel */
+@media (max-width: 768px) {
+  .feature-grid {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory;
+    gap: 16px;
+    padding-bottom: 16px;
+    -webkit-overflow-scrolling: touch;
+    margin: 0 -24px;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+  .feature-grid::-webkit-scrollbar {
+    display: none;
+  }
+  .feature-grid {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .feature-card {
+    flex: 0 0 85% !important;
+    max-width: 85% !important;
+    scroll-snap-align: start;
   }
 }
 
@@ -907,8 +920,5 @@ a {
   .hero-cta {
     flex-direction: column;
     align-items: center;
-  }
-  .hero-map {
-    padding: 20px 10px;
   }
 }
