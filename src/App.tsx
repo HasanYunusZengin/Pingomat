@@ -22,14 +22,23 @@ function App() {
       <header className={`header ${scrolled ? 'scrolled' : ''}`}>
         <div className="header-inner">
           <a className="logo" href="#top">
-            <svg width="30" height="30" viewBox="0 0 48 48" aria-hidden="true">
-              <rect width="48" height="48" rx="12" fill="#1fb86b" />
-              <path d="M15 37V13" stroke="#fff" strokeWidth="5" strokeLinecap="round" />
-              <circle cx="25" cy="21" r="9" fill="none" stroke="#fff" strokeWidth="4.5" />
-              <circle cx="25" cy="21" r="2.8" fill="#fff" />
-              <path d="M35.7 12a14 14 0 0 1 0 18" fill="none" stroke="#fff" strokeOpacity=".65" strokeWidth="2.6" strokeLinecap="round" />
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 100" height="32" role="img" aria-label="Pingomat">
+              <title>Pingomat</title>
+              <desc>Pingomat web sitesi izleme logosu: küre üzerinde kalp atışı çizgisi ve canlı durum noktası</desc>
+              <rect x="8" y="10" width="80" height="80" rx="20" fill="#17213A"/>
+              <g fill="none" stroke="#5BB974" strokeWidth="2.5" strokeLinecap="round" opacity="0.55">
+                <circle cx="48" cy="50" r="26"/>
+                <ellipse cx="48" cy="50" rx="11" ry="26"/>
+                <line x1="22" y1="50" x2="74" y2="50"/>
+              </g>
+              <polyline points="14,52 33,52 40,36 49,66 57,43 62,52 82,52" fill="none" stroke="#5BB974" strokeWidth="5" strokeLinecap="round" strokeLinejoin="round"/>
+              <circle cx="82" cy="18" r="11" fill="#FFFFFF"/>
+              <circle cx="82" cy="18" r="7" fill="#5BB974"/>
+              <circle cx="82" cy="18" r="11" fill="none" stroke="#5BB974" strokeWidth="1.5" opacity="0.35"/>
+              <text x="108" y="64" fontFamily="'Poppins','Nunito Sans','Segoe UI',Helvetica,Arial,sans-serif" fontSize="42" fontWeight="700" letterSpacing="-0.5">
+                <tspan fill="#17213A">Ping</tspan><tspan fill="#5BB974">omat</tspan>
+              </text>
             </svg>
-            <span>Ping<b>omat</b></span>
           </a>
           <nav className="nav-links">
             <a href="#features">Features</a>
