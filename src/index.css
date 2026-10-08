@@ -52,7 +52,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   line-height: 1.6;
-  padding-top: 10px;
+  padding-top: 130px;
 }
 
 a {
@@ -63,7 +63,7 @@ a {
 /* Header */
 .header {
   position: sticky;
-  top: 20px;
+  top: 150px;
   z-index: 100;
   max-width: 1200px;
   margin: 0 auto;
@@ -858,7 +858,7 @@ a {
   }
   .header {
     padding: 0 12px;
-    top: 15px;
+    top: 20px;
   }
   .header-inner {
     justify-content: space-between;
