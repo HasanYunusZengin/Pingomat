@@ -81,35 +81,78 @@ function App() {
           </div>
         </div>
 
-        {/* Dashboard Mock */}
+        {/* Dashboard Showcase - Split Layout */}
         <div className="dashboard-section">
           <div className="container">
-            <div className="dashboard-mock">
-              <div className="dashboard-header">
-                <div className="dashboard-status">
-                  <i className="fas fa-shield-check"></i>
-                  <span>All services operational</span>
-                </div>
-                <div className="dashboard-stats">
-                  <div className="stat-item">
-                    <div className="stat-value">99.9%</div>
-                    <div className="stat-label">Uptime</div>
-                  </div>
-                  <div className="stat-item">
-                    <div className="stat-value">142ms</div>
-                    <div className="stat-label">Avg Response</div>
-                  </div>
-                  <div className="stat-item">
-                    <div className="stat-value">4/4</div>
-                    <div className="stat-label">Monitors</div>
-                  </div>
-                </div>
+            <div className="dashboard-showcase">
+              {/* Left Column - Text Content */}
+              <div className="dashboard-text">
+                <span className="dashboard-badge">
+                  <i className="fas fa-signal"></i>
+                  LIVE INFRASTRUCTURE STATUS
+                </span>
+                <h2 className="dashboard-headline">Stop Guessing Outages—Act on Live Performance Data</h2>
+                <p className="dashboard-description">
+                  Turn raw server metrics into actionable insights. Prove your uptime SLA to clients and resolve silent degradations before your users ever notice a slowdown.
+                </p>
+                <ul className="dashboard-features">
+                  <li>
+                    <span className="check-icon">
+                      <i className="fas fa-check"></i>
+                    </span>
+                    <div>
+                      <strong>30-Day Historical Trends:</strong> Inspect daily downtime bars and verify your 99.9% uptime SLA at a glance.
+                    </div>
+                  </li>
+                  <li>
+                    <span className="check-icon">
+                      <i className="fas fa-check"></i>
+                    </span>
+                    <div>
+                      <strong>Smart Content Verification:</strong> Confirm that key page elements (like "Add to cart") actually render, beyond simple HTTP status codes.
+                    </div>
+                  </li>
+                  <li>
+                    <span className="check-icon">
+                      <i className="fas fa-check"></i>
+                    </span>
+                    <div>
+                      <strong>Unified Health Metrics:</strong> See active monitors, average latency, and overall operational status consolidated in a single view.
+                    </div>
+                  </li>
+                </ul>
               </div>
-              <div className="dashboard-content">
-                <DashRow status="UP" name="Company website" url="https://www.example.com/" uptime="99.98%" pattern={0} responseTime="89ms" />
-                <DashRow status="UP" name="Online shop" url={'https://shop.example.com/ · contains "Add to cart"'} uptime="100%" pattern={1} responseTime="156ms" />
-                <DashRow status="DOWN" name="Customer portal" url="https://portal.example.com/ · Frankfurt, Helsinki: timeout" uptime="97.40%" pattern={2} responseTime="—" />
-                <DashRow status="UP" name="Mail server" url="TCP port 587" uptime="100%" pattern={3} responseTime="45ms" />
+
+              {/* Right Column - Status Card Mockup */}
+              <div className="dashboard-card-wrapper">
+                <div className="dashboard-mock">
+                  <div className="dashboard-header">
+                    <div className="dashboard-status">
+                      <i className="fas fa-shield-check"></i>
+                      <span>All services operational</span>
+                    </div>
+                    <div className="dashboard-stats">
+                      <div className="stat-item">
+                        <div className="stat-value">99.9%</div>
+                        <div className="stat-label">Uptime</div>
+                      </div>
+                      <div className="stat-item">
+                        <div className="stat-value">142ms</div>
+                        <div className="stat-label">Avg Response</div>
+                      </div>
+                      <div className="stat-item">
+                        <div className="stat-value">4/4</div>
+                        <div className="stat-label">Monitors</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="dashboard-content">
+                    <DashRow status="UP" name="Company website" url="https://www.example.com/" uptime="99.98%" pattern={0} responseTime="89ms" />
+                    <DashRow status="UP" name="Online shop" url={'https://shop.example.com/ · contains "Add to cart"'} uptime="100%" pattern={1} responseTime="156ms" />
+                    <DashRow status="DOWN" name="Customer portal" url="https://portal.example.com/ · Frankfurt, Helsinki: timeout" uptime="97.40%" pattern={2} responseTime="—" />
+                    <DashRow status="UP" name="Mail server" url="TCP port 587" uptime="100%" pattern={3} responseTime="45ms" />
+                  </div>
+                </div>
               </div>
             </div>
           </div>
