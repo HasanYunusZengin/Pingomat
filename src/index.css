@@ -52,6 +52,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   line-height: 1.6;
+  padding-top: 16px;
 }
 
 a {
@@ -62,26 +63,31 @@ a {
 /* Header */
 .header {
   position: sticky;
-  top: 0;
+  top: 16px;
   z-index: 100;
-  background: rgba(255, 255, 255, 0.94);
-  backdrop-filter: blur(8px);
-  border-bottom: 1px solid var(--line);
-  transition: box-shadow 0.2s ease;
-}
-
-.header.scrolled {
-  box-shadow: var(--shadow-md);
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  transition: all 0.3s ease;
 }
 
 .header-inner {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 0 24px;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+  padding: 0 32px;
   display: flex;
   align-items: center;
   height: 64px;
   gap: 28px;
+  transition: all 0.3s ease;
+}
+
+.header.scrolled .header-inner {
+  background: rgba(255, 255, 255, 0.85);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
 }
 
 .logo {
@@ -848,8 +854,13 @@ a {
   .nav-links {
     display: none;
   }
+  .header {
+    padding: 0 12px;
+    top: 12px;
+  }
   .header-inner {
     justify-content: space-between;
+    padding: 0 20px;
   }
   .steps-grid {
     grid-template-columns: 1fr;
