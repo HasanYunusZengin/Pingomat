@@ -53,22 +53,30 @@ function App() {
             </div>
           </header>
 
-          <div className="hero-content">
-            <span className="hero-badge">
-              <i className="fas fa-globe"></i>
-              Monitoring from multiple locations
-            </span>
-            <h1>Simple &amp; reliable website monitoring.</h1>
-            <p className="hero-lead">
-              Pingomat checks your sites from several locations around the world, alerts you by email or Slack the moment something breaks, and keeps a clear history of uptime and speed.
-            </p>
-            <div className="hero-cta">
-              <a className="btn btn-primary btn-lg" href="#">
-                Open the dashboard
-              </a>
-              <a className="btn btn-secondary btn-lg" href="#features">
-                See what it checks
-              </a>
+          <div className="hero-split">
+            {/* Left: Text */}
+            <div className="hero-text">
+              <span className="hero-badge">
+                <i className="fas fa-globe"></i>
+                Monitoring from multiple locations
+              </span>
+              <h1>Simple &amp; reliable website monitoring.</h1>
+              <p className="hero-lead">
+                Pingomat checks your sites from several locations around the world, alerts you by email or Slack the moment something breaks, and keeps a clear history of uptime and speed.
+              </p>
+              <div className="hero-cta">
+                <a className="btn btn-primary btn-lg" href="#">
+                  Open the dashboard
+                </a>
+                <a className="btn btn-secondary btn-lg" href="#features">
+                  See what it checks
+                </a>
+              </div>
+            </div>
+
+            {/* Right: Map */}
+            <div className="hero-map">
+              <WorldMap />
             </div>
           </div>
         </div>
@@ -284,6 +292,183 @@ function DashRow({ status, name, url, uptime, pattern, responseTime }: {
         <span className="uptime-label">30 days</span>
       </div>
     </div>
+  );
+}
+
+// World Map Component
+function WorldMap() {
+  const r = 3;
+  return (
+    <svg className="map-svg" viewBox="0 0 1000 470" role="img" aria-label="World map with monitoring probes">
+      <g fill="rgba(255,255,255,0.3)">
+        {/* NORTH AMERICA */}
+        <circle cx="88" cy="52" r={r}/><circle cx="103" cy="52" r={r}/><circle cx="118" cy="52" r={r}/>
+        <circle cx="88" cy="67" r={r}/><circle cx="103" cy="67" r={r}/><circle cx="118" cy="67" r={r}/><circle cx="133" cy="67" r={r}/>
+        <circle cx="133" cy="52" r={r}/><circle cx="148" cy="52" r={r}/><circle cx="163" cy="52" r={r}/><circle cx="178" cy="52" r={r}/><circle cx="193" cy="52" r={r}/><circle cx="208" cy="52" r={r}/><circle cx="223" cy="52" r={r}/><circle cx="238" cy="52" r={r}/>
+        <circle cx="118" cy="67" r={r}/><circle cx="133" cy="67" r={r}/><circle cx="148" cy="67" r={r}/><circle cx="163" cy="67" r={r}/><circle cx="178" cy="67" r={r}/><circle cx="193" cy="67" r={r}/><circle cx="208" cy="67" r={r}/><circle cx="223" cy="67" r={r}/><circle cx="238" cy="67" r={r}/><circle cx="253" cy="67" r={r}/>
+        <circle cx="118" cy="82" r={r}/><circle cx="133" cy="82" r={r}/><circle cx="148" cy="82" r={r}/><circle cx="163" cy="82" r={r}/><circle cx="178" cy="82" r={r}/><circle cx="193" cy="82" r={r}/><circle cx="208" cy="82" r={r}/><circle cx="223" cy="82" r={r}/><circle cx="238" cy="82" r={r}/><circle cx="253" cy="82" r={r}/><circle cx="268" cy="82" r={r}/>
+        <circle cx="118" cy="97" r={r}/><circle cx="133" cy="97" r={r}/><circle cx="148" cy="97" r={r}/><circle cx="163" cy="97" r={r}/><circle cx="178" cy="97" r={r}/><circle cx="193" cy="97" r={r}/><circle cx="208" cy="97" r={r}/><circle cx="223" cy="97" r={r}/><circle cx="238" cy="97" r={r}/><circle cx="253" cy="97" r={r}/><circle cx="268" cy="97" r={r}/>
+        <circle cx="118" cy="112" r={r}/><circle cx="133" cy="112" r={r}/><circle cx="148" cy="112" r={r}/><circle cx="163" cy="112" r={r}/><circle cx="178" cy="112" r={r}/><circle cx="193" cy="112" r={r}/><circle cx="208" cy="112" r={r}/><circle cx="223" cy="112" r={r}/><circle cx="238" cy="112" r={r}/><circle cx="253" cy="112" r={r}/><circle cx="268" cy="112" r={r}/>
+        <circle cx="118" cy="127" r={r}/><circle cx="133" cy="127" r={r}/><circle cx="148" cy="127" r={r}/><circle cx="163" cy="127" r={r}/><circle cx="178" cy="127" r={r}/><circle cx="193" cy="127" r={r}/><circle cx="208" cy="127" r={r}/><circle cx="223" cy="127" r={r}/><circle cx="238" cy="127" r={r}/><circle cx="253" cy="127" r={r}/>
+        <circle cx="118" cy="142" r={r}/><circle cx="133" cy="142" r={r}/><circle cx="148" cy="142" r={r}/><circle cx="163" cy="142" r={r}/><circle cx="178" cy="142" r={r}/><circle cx="193" cy="142" r={r}/><circle cx="208" cy="142" r={r}/><circle cx="223" cy="142" r={r}/><circle cx="238" cy="142" r={r}/><circle cx="253" cy="142" r={r}/>
+        <circle cx="133" cy="157" r={r}/><circle cx="148" cy="157" r={r}/><circle cx="163" cy="157" r={r}/><circle cx="178" cy="157" r={r}/><circle cx="193" cy="157" r={r}/><circle cx="208" cy="157" r={r}/><circle cx="223" cy="157" r={r}/><circle cx="238" cy="157" r={r}/><circle cx="253" cy="157" r={r}/>
+        <circle cx="148" cy="172" r={r}/><circle cx="163" cy="172" r={r}/><circle cx="178" cy="172" r={r}/><circle cx="193" cy="172" r={r}/><circle cx="208" cy="172" r={r}/><circle cx="223" cy="172" r={r}/><circle cx="238" cy="172" r={r}/>
+        <circle cx="163" cy="187" r={r}/><circle cx="178" cy="187" r={r}/><circle cx="193" cy="187" r={r}/><circle cx="208" cy="187" r={r}/><circle cx="223" cy="187" r={r}/>
+        <circle cx="148" cy="202" r={r}/><circle cx="163" cy="202" r={r}/><circle cx="178" cy="202" r={r}/><circle cx="193" cy="202" r={r}/><circle cx="208" cy="202" r={r}/>
+        <circle cx="163" cy="217" r={r}/><circle cx="178" cy="217" r={r}/><circle cx="193" cy="217" r={r}/><circle cx="208" cy="217" r={r}/><circle cx="223" cy="217" r={r}/>
+        <circle cx="178" cy="232" r={r}/><circle cx="193" cy="232" r={r}/><circle cx="208" cy="232" r={r}/><circle cx="223" cy="232" r={r}/>
+        <circle cx="193" cy="247" r={r}/><circle cx="208" cy="247" r={r}/><circle cx="223" cy="247" r={r}/>
+        <circle cx="208" cy="262" r={r}/><circle cx="223" cy="262" r={r}/>
+        <circle cx="223" cy="277" r={r}/><circle cx="238" cy="277" r={r}/>
+        {/* SOUTH AMERICA */}
+        <circle cx="253" cy="292" r={r}/><circle cx="268" cy="292" r={r}/><circle cx="283" cy="292" r={r}/><circle cx="298" cy="292" r={r}/>
+        <circle cx="253" cy="307" r={r}/><circle cx="268" cy="307" r={r}/><circle cx="283" cy="307" r={r}/><circle cx="298" cy="307" r={r}/><circle cx="313" cy="307" r={r}/><circle cx="328" cy="307" r={r}/><circle cx="343" cy="307" r={r}/>
+        <circle cx="253" cy="322" r={r}/><circle cx="268" cy="322" r={r}/><circle cx="283" cy="322" r={r}/><circle cx="298" cy="322" r={r}/><circle cx="313" cy="322" r={r}/><circle cx="328" cy="322" r={r}/><circle cx="343" cy="322" r={r}/><circle cx="358" cy="322" r={r}/>
+        <circle cx="268" cy="337" r={r}/><circle cx="283" cy="337" r={r}/><circle cx="298" cy="337" r={r}/><circle cx="313" cy="337" r={r}/><circle cx="328" cy="337" r={r}/><circle cx="343" cy="337" r={r}/><circle cx="358" cy="337" r={r}/><circle cx="373" cy="337" r={r}/>
+        <circle cx="268" cy="352" r={r}/><circle cx="283" cy="352" r={r}/><circle cx="298" cy="352" r={r}/><circle cx="313" cy="352" r={r}/><circle cx="328" cy="352" r={r}/><circle cx="343" cy="352" r={r}/><circle cx="358" cy="352" r={r}/><circle cx="373" cy="352" r={r}/>
+        <circle cx="283" cy="367" r={r}/><circle cx="298" cy="367" r={r}/><circle cx="313" cy="367" r={r}/><circle cx="328" cy="367" r={r}/><circle cx="343" cy="367" r={r}/><circle cx="358" cy="367" r={r}/>
+        <circle cx="283" cy="382" r={r}/><circle cx="298" cy="382" r={r}/><circle cx="313" cy="382" r={r}/><circle cx="328" cy="382" r={r}/><circle cx="343" cy="382" r={r}/>
+        <circle cx="298" cy="397" r={r}/><circle cx="313" cy="397" r={r}/><circle cx="328" cy="397" r={r}/><circle cx="343" cy="397" r={r}/>
+        <circle cx="298" cy="412" r={r}/><circle cx="313" cy="412" r={r}/><circle cx="328" cy="412" r={r}/>
+        <circle cx="313" cy="427" r={r}/><circle cx="328" cy="427" r={r}/>
+        <circle cx="313" cy="442" r={r}/>
+        {/* EUROPE */}
+        <circle cx="478" cy="37" r={r}/><circle cx="493" cy="37" r={r}/><circle cx="508" cy="37" r={r}/>
+        <circle cx="463" cy="52" r={r}/><circle cx="478" cy="52" r={r}/><circle cx="493" cy="52" r={r}/><circle cx="508" cy="52" r={r}/><circle cx="523" cy="52" r={r}/>
+        <circle cx="463" cy="67" r={r}/><circle cx="478" cy="67" r={r}/><circle cx="493" cy="67" r={r}/><circle cx="508" cy="67" r={r}/><circle cx="523" cy="67" r={r}/>
+        <circle cx="418" cy="82" r={r}/><circle cx="433" cy="82" r={r}/>
+        <circle cx="418" cy="97" r={r}/><circle cx="433" cy="97" r={r}/><circle cx="448" cy="97" r={r}/>
+        <circle cx="433" cy="112" r={r}/><circle cx="448" cy="112" r={r}/><circle cx="463" cy="112" r={r}/><circle cx="478" cy="112" r={r}/><circle cx="493" cy="112" r={r}/><circle cx="508" cy="112" r={r}/><circle cx="523" cy="112" r={r}/><circle cx="538" cy="112" r={r}/>
+        <circle cx="433" cy="127" r={r}/><circle cx="448" cy="127" r={r}/><circle cx="463" cy="127" r={r}/><circle cx="478" cy="127" r={r}/><circle cx="493" cy="127" r={r}/><circle cx="508" cy="127" r={r}/><circle cx="523" cy="127" r={r}/><circle cx="538" cy="127" r={r}/>
+        <circle cx="448" cy="142" r={r}/><circle cx="463" cy="142" r={r}/><circle cx="478" cy="142" r={r}/><circle cx="493" cy="142" r={r}/><circle cx="508" cy="142" r={r}/><circle cx="523" cy="142" r={r}/>
+        <circle cx="448" cy="157" r={r}/><circle cx="463" cy="157" r={r}/><circle cx="478" cy="157" r={r}/><circle cx="493" cy="157" r={r}/><circle cx="508" cy="157" r={r}/>
+        <circle cx="463" cy="172" r={r}/><circle cx="478" cy="172" r={r}/><circle cx="493" cy="172" r={r}/>
+        {/* RUSSIA/ASIA */}
+        <circle cx="538" cy="37" r={r}/><circle cx="553" cy="37" r={r}/><circle cx="568" cy="37" r={r}/><circle cx="583" cy="37" r={r}/><circle cx="598" cy="37" r={r}/><circle cx="613" cy="37" r={r}/><circle cx="628" cy="37" r={r}/><circle cx="643" cy="37" r={r}/><circle cx="658" cy="37" r={r}/><circle cx="673" cy="37" r={r}/><circle cx="688" cy="37" r={r}/><circle cx="703" cy="37" r={r}/><circle cx="718" cy="37" r={r}/><circle cx="733" cy="37" r={r}/><circle cx="748" cy="37" r={r}/><circle cx="763" cy="37" r={r}/><circle cx="778" cy="37" r={r}/>
+        <circle cx="538" cy="52" r={r}/><circle cx="553" cy="52" r={r}/><circle cx="568" cy="52" r={r}/><circle cx="583" cy="52" r={r}/><circle cx="598" cy="52" r={r}/><circle cx="613" cy="52" r={r}/><circle cx="628" cy="52" r={r}/><circle cx="643" cy="52" r={r}/><circle cx="658" cy="52" r={r}/><circle cx="673" cy="52" r={r}/><circle cx="688" cy="52" r={r}/><circle cx="703" cy="52" r={r}/><circle cx="718" cy="52" r={r}/><circle cx="733" cy="52" r={r}/><circle cx="748" cy="52" r={r}/><circle cx="763" cy="52" r={r}/><circle cx="778" cy="52" r={r}/><circle cx="793" cy="52" r={r}/>
+        <circle cx="553" cy="67" r={r}/><circle cx="568" cy="67" r={r}/><circle cx="583" cy="67" r={r}/><circle cx="598" cy="67" r={r}/><circle cx="613" cy="67" r={r}/><circle cx="628" cy="67" r={r}/><circle cx="643" cy="67" r={r}/><circle cx="658" cy="67" r={r}/><circle cx="673" cy="67" r={r}/><circle cx="688" cy="67" r={r}/><circle cx="703" cy="67" r={r}/><circle cx="718" cy="67" r={r}/><circle cx="733" cy="67" r={r}/><circle cx="748" cy="67" r={r}/><circle cx="763" cy="67" r={r}/><circle cx="778" cy="67" r={r}/><circle cx="793" cy="67" r={r}/><circle cx="808" cy="67" r={r}/>
+        <circle cx="553" cy="82" r={r}/><circle cx="568" cy="82" r={r}/><circle cx="583" cy="82" r={r}/><circle cx="598" cy="82" r={r}/><circle cx="613" cy="82" r={r}/><circle cx="628" cy="82" r={r}/><circle cx="643" cy="82" r={r}/><circle cx="658" cy="82" r={r}/><circle cx="673" cy="82" r={r}/><circle cx="688" cy="82" r={r}/><circle cx="703" cy="82" r={r}/><circle cx="718" cy="82" r={r}/><circle cx="733" cy="82" r={r}/><circle cx="748" cy="82" r={r}/><circle cx="763" cy="82" r={r}/><circle cx="778" cy="82" r={r}/><circle cx="793" cy="82" r={r}/><circle cx="808" cy="82" r={r}/>
+        <circle cx="568" cy="97" r={r}/><circle cx="583" cy="97" r={r}/><circle cx="598" cy="97" r={r}/><circle cx="613" cy="97" r={r}/><circle cx="628" cy="97" r={r}/><circle cx="643" cy="97" r={r}/><circle cx="658" cy="97" r={r}/><circle cx="673" cy="97" r={r}/><circle cx="688" cy="97" r={r}/><circle cx="703" cy="97" r={r}/><circle cx="718" cy="97" r={r}/><circle cx="733" cy="97" r={r}/><circle cx="748" cy="97" r={r}/><circle cx="763" cy="97" r={r}/><circle cx="778" cy="97" r={r}/><circle cx="793" cy="97" r={r}/>
+        <circle cx="583" cy="112" r={r}/><circle cx="598" cy="112" r={r}/><circle cx="613" cy="112" r={r}/><circle cx="628" cy="112" r={r}/><circle cx="643" cy="112" r={r}/><circle cx="658" cy="112" r={r}/><circle cx="673" cy="112" r={r}/><circle cx="688" cy="112" r={r}/><circle cx="703" cy="112" r={r}/><circle cx="718" cy="112" r={r}/><circle cx="733" cy="112" r={r}/><circle cx="748" cy="112" r={r}/><circle cx="763" cy="112" r={r}/>
+        <circle cx="598" cy="127" r={r}/><circle cx="613" cy="127" r={r}/><circle cx="628" cy="127" r={r}/><circle cx="643" cy="127" r={r}/><circle cx="658" cy="127" r={r}/><circle cx="673" cy="127" r={r}/><circle cx="688" cy="127" r={r}/><circle cx="703" cy="127" r={r}/><circle cx="718" cy="127" r={r}/><circle cx="733" cy="127" r={r}/><circle cx="748" cy="127" r={r}/>
+        <circle cx="568" cy="142" r={r}/><circle cx="583" cy="142" r={r}/><circle cx="598" cy="142" r={r}/><circle cx="613" cy="142" r={r}/><circle cx="628" cy="142" r={r}/><circle cx="643" cy="142" r={r}/><circle cx="658" cy="142" r={r}/><circle cx="673" cy="142" r={r}/><circle cx="688" cy="142" r={r}/>
+        <circle cx="583" cy="157" r={r}/><circle cx="598" cy="157" r={r}/><circle cx="613" cy="157" r={r}/><circle cx="628" cy="157" r={r}/><circle cx="643" cy="157" r={r}/><circle cx="658" cy="157" r={r}/><circle cx="673" cy="157" r={r}/><circle cx="688" cy="157" r={r}/><circle cx="703" cy="157" r={r}/>
+        <circle cx="673" cy="172" r={r}/><circle cx="688" cy="172" r={r}/><circle cx="703" cy="172" r={r}/><circle cx="718" cy="172" r={r}/><circle cx="733" cy="172" r={r}/>
+        <circle cx="688" cy="187" r={r}/><circle cx="703" cy="187" r={r}/><circle cx="718" cy="187" r={r}/><circle cx="733" cy="187" r={r}/>
+        <circle cx="688" cy="202" r={r}/><circle cx="703" cy="202" r={r}/><circle cx="718" cy="202" r={r}/>
+        <circle cx="703" cy="217" r={r}/><circle cx="718" cy="217" r={r}/>
+        <circle cx="748" cy="127" r={r}/><circle cx="763" cy="127" r={r}/><circle cx="778" cy="127" r={r}/><circle cx="793" cy="127" r={r}/><circle cx="808" cy="127" r={r}/>
+        <circle cx="748" cy="142" r={r}/><circle cx="763" cy="142" r={r}/><circle cx="778" cy="142" r={r}/><circle cx="793" cy="142" r={r}/><circle cx="808" cy="142" r={r}/><circle cx="823" cy="142" r={r}/>
+        <circle cx="748" cy="157" r={r}/><circle cx="763" cy="157" r={r}/><circle cx="778" cy="157" r={r}/><circle cx="793" cy="157" r={r}/><circle cx="808" cy="157" r={r}/><circle cx="823" cy="157" r={r}/>
+        <circle cx="748" cy="172" r={r}/><circle cx="763" cy="172" r={r}/><circle cx="778" cy="172" r={r}/><circle cx="793" cy="172" r={r}/><circle cx="808" cy="172" r={r}/>
+        <circle cx="763" cy="187" r={r}/><circle cx="778" cy="187" r={r}/><circle cx="793" cy="187" r={r}/>
+        <circle cx="853" cy="112" r={r}/><circle cx="868" cy="112" r={r}/>
+        <circle cx="838" cy="127" r={r}/><circle cx="853" cy="127" r={r}/><circle cx="868" cy="127" r={r}/>
+        <circle cx="838" cy="142" r={r}/><circle cx="853" cy="142" r={r}/>
+        <circle cx="838" cy="157" r={r}/><circle cx="853" cy="157" r={r}/>
+        <circle cx="748" cy="202" r={r}/><circle cx="763" cy="202" r={r}/><circle cx="778" cy="202" r={r}/><circle cx="793" cy="202" r={r}/>
+        <circle cx="763" cy="217" r={r}/><circle cx="778" cy="217" r={r}/><circle cx="793" cy="217" r={r}/><circle cx="808" cy="217" r={r}/>
+        <circle cx="778" cy="232" r={r}/><circle cx="793" cy="232" r={r}/><circle cx="808" cy="232" r={r}/>
+        <circle cx="793" cy="247" r={r}/><circle cx="808" cy="247" r={r}/><circle cx="823" cy="247" r={r}/>
+        <circle cx="808" cy="262" r={r}/><circle cx="823" cy="262" r={r}/>
+        {/* AFRICA */}
+        <circle cx="448" cy="187" r={r}/><circle cx="463" cy="187" r={r}/><circle cx="478" cy="187" r={r}/><circle cx="493" cy="187" r={r}/><circle cx="508" cy="187" r={r}/><circle cx="523" cy="187" r={r}/><circle cx="538" cy="187" r={r}/><circle cx="553" cy="187" r={r}/><circle cx="568" cy="187" r={r}/>
+        <circle cx="448" cy="202" r={r}/><circle cx="463" cy="202" r={r}/><circle cx="478" cy="202" r={r}/><circle cx="493" cy="202" r={r}/><circle cx="508" cy="202" r={r}/><circle cx="523" cy="202" r={r}/><circle cx="538" cy="202" r={r}/><circle cx="553" cy="202" r={r}/><circle cx="568" cy="202" r={r}/><circle cx="583" cy="202" r={r}/>
+        <circle cx="448" cy="217" r={r}/><circle cx="463" cy="217" r={r}/><circle cx="478" cy="217" r={r}/><circle cx="493" cy="217" r={r}/><circle cx="508" cy="217" r={r}/><circle cx="523" cy="217" r={r}/><circle cx="538" cy="217" r={r}/><circle cx="553" cy="217" r={r}/><circle cx="568" cy="217" r={r}/><circle cx="583" cy="217" r={r}/>
+        <circle cx="448" cy="232" r={r}/><circle cx="463" cy="232" r={r}/><circle cx="478" cy="232" r={r}/><circle cx="493" cy="232" r={r}/><circle cx="508" cy="232" r={r}/><circle cx="523" cy="232" r={r}/><circle cx="538" cy="232" r={r}/><circle cx="553" cy="232" r={r}/><circle cx="568" cy="232" r={r}/>
+        <circle cx="463" cy="247" r={r}/><circle cx="478" cy="247" r={r}/><circle cx="493" cy="247" r={r}/><circle cx="508" cy="247" r={r}/><circle cx="523" cy="247" r={r}/><circle cx="538" cy="247" r={r}/><circle cx="553" cy="247" r={r}/><circle cx="568" cy="247" r={r}/>
+        <circle cx="463" cy="262" r={r}/><circle cx="478" cy="262" r={r}/><circle cx="493" cy="262" r={r}/><circle cx="508" cy="262" r={r}/><circle cx="523" cy="262" r={r}/><circle cx="538" cy="262" r={r}/><circle cx="553" cy="262" r={r}/>
+        <circle cx="478" cy="277" r={r}/><circle cx="493" cy="277" r={r}/><circle cx="508" cy="277" r={r}/><circle cx="523" cy="277" r={r}/><circle cx="538" cy="277" r={r}/><circle cx="553" cy="277" r={r}/>
+        <circle cx="478" cy="292" r={r}/><circle cx="493" cy="292" r={r}/><circle cx="508" cy="292" r={r}/><circle cx="523" cy="292" r={r}/><circle cx="538" cy="292" r={r}/><circle cx="553" cy="292" r={r}/>
+        <circle cx="478" cy="307" r={r}/><circle cx="493" cy="307" r={r}/><circle cx="508" cy="307" r={r}/><circle cx="523" cy="307" r={r}/><circle cx="538" cy="307" r={r}/>
+        <circle cx="493" cy="322" r={r}/><circle cx="508" cy="322" r={r}/><circle cx="523" cy="322" r={r}/><circle cx="538" cy="322" r={r}/>
+        <circle cx="493" cy="337" r={r}/><circle cx="508" cy="337" r={r}/><circle cx="523" cy="337" r={r}/><circle cx="538" cy="337" r={r}/>
+        <circle cx="493" cy="352" r={r}/><circle cx="508" cy="352" r={r}/><circle cx="523" cy="352" r={r}/><circle cx="538" cy="352" r={r}/>
+        <circle cx="508" cy="367" r={r}/><circle cx="523" cy="367" r={r}/><circle cx="538" cy="367" r={r}/>
+        <circle cx="508" cy="382" r={r}/><circle cx="523" cy="382" r={r}/><circle cx="538" cy="382" r={r}/>
+        <circle cx="523" cy="397" r={r}/><circle cx="538" cy="397" r={r}/>
+        <circle cx="583" cy="337" r={r}/><circle cx="583" cy="352" r={r}/><circle cx="583" cy="367" r={r}/>
+        {/* AUSTRALIA */}
+        <circle cx="823" cy="322" r={r}/><circle cx="838" cy="322" r={r}/><circle cx="853" cy="322" r={r}/><circle cx="868" cy="322" r={r}/><circle cx="883" cy="322" r={r}/>
+        <circle cx="808" cy="337" r={r}/><circle cx="823" cy="337" r={r}/><circle cx="838" cy="337" r={r}/><circle cx="853" cy="337" r={r}/><circle cx="868" cy="337" r={r}/><circle cx="883" cy="337" r={r}/><circle cx="898" cy="337" r={r}/>
+        <circle cx="808" cy="352" r={r}/><circle cx="823" cy="352" r={r}/><circle cx="838" cy="352" r={r}/><circle cx="853" cy="352" r={r}/><circle cx="868" cy="352" r={r}/><circle cx="883" cy="352" r={r}/><circle cx="898" cy="352" r={r}/><circle cx="913" cy="352" r={r}/>
+        <circle cx="808" cy="367" r={r}/><circle cx="823" cy="367" r={r}/><circle cx="838" cy="367" r={r}/><circle cx="853" cy="367" r={r}/><circle cx="868" cy="367" r={r}/><circle cx="883" cy="367" r={r}/><circle cx="898" cy="367" r={r}/><circle cx="913" cy="367" r={r}/><circle cx="928" cy="367" r={r}/>
+        <circle cx="823" cy="382" r={r}/><circle cx="838" cy="382" r={r}/><circle cx="853" cy="382" r={r}/><circle cx="868" cy="382" r={r}/><circle cx="883" cy="382" r={r}/><circle cx="898" cy="382" r={r}/><circle cx="913" cy="382" r={r}/><circle cx="928" cy="382" r={r}/><circle cx="943" cy="382" r={r}/>
+        <circle cx="838" cy="397" r={r}/><circle cx="853" cy="397" r={r}/><circle cx="868" cy="397" r={r}/><circle cx="883" cy="397" r={r}/><circle cx="898" cy="397" r={r}/><circle cx="913" cy="397" r={r}/><circle cx="928" cy="397" r={r}/>
+        <circle cx="853" cy="412" r={r}/><circle cx="868" cy="412" r={r}/><circle cx="883" cy="412" r={r}/><circle cx="898" cy="412" r={r}/><circle cx="913" cy="412" r={r}/>
+        <circle cx="868" cy="427" r={r}/><circle cx="883" cy="427" r={r}/><circle cx="898" cy="427" r={r}/>
+        {/* Indonesia */}
+        <circle cx="778" cy="262" r={r}/><circle cx="793" cy="262" r={r}/><circle cx="808" cy="262" r={r}/>
+        <circle cx="793" cy="277" r={r}/><circle cx="808" cy="277" r={r}/><circle cx="823" cy="277" r={r}/><circle cx="838" cy="277" r={r}/><circle cx="853" cy="277" r={r}/>
+        <circle cx="808" cy="292" r={r}/><circle cx="823" cy="292" r={r}/><circle cx="838" cy="292" r={r}/><circle cx="853" cy="292" r={r}/><circle cx="868" cy="292" r={r}/>
+        {/* New Zealand */}
+        <circle cx="958" cy="397" r={r}/><circle cx="973" cy="397" r={r}/>
+        <circle cx="958" cy="412" r={r}/><circle cx="973" cy="412" r={r}/>
+      </g>
+      
+      {/* Arcs */}
+      <path id="a-losangeles" d="M142.7 149.4Q356 17 569 124.5" fill="none" stroke="rgba(255,255,255,0.5)" strokeWidth="1.5" strokeDasharray="4 6" />
+      <path id="a-saopaulo" d="M347 355.5Q458 150 569 124.5" fill="none" stroke="rgba(255,255,255,0.5)" strokeWidth="1.5" strokeDasharray="4 6" />
+      <path id="a-frankfurt" d="M510.4 92.5Q540 90 569 124.5" fill="none" stroke="rgba(255,255,255,0.5)" strokeWidth="1.5" strokeDasharray="4 6" />
+      <path id="a-capetown" d="M540.7 392.7Q555 183 569 124.5" fill="none" stroke="rgba(255,255,255,0.5)" strokeWidth="1.5" strokeDasharray="4 6" />
+      <path id="a-singapore" d="M807.1 266.5Q688 118 569 124.5" fill="none" stroke="rgba(255,255,255,0.5)" strokeWidth="1.5" strokeDasharray="4 6" />
+      <path id="a-sydney" d="M927.6 392.5Q748 133 569 124.5" fill="none" stroke="rgba(255,255,255,0.5)" strokeWidth="1.5" strokeDasharray="4 6" />
+
+      {/* Your site marker */}
+      <g>
+        <circle cx="569" cy="124.5" r="4" fill="none" stroke="#fff">
+          <animate attributeName="r" values="4;26" dur="3s" repeatCount="indefinite" />
+          <animate attributeName="opacity" values=".8;0" dur="3s" repeatCount="indefinite" />
+        </circle>
+        <circle cx="569" cy="124.5" r="4" fill="none" stroke="#fff">
+          <animate attributeName="r" values="4;26" dur="3s" begin="1.5s" repeatCount="indefinite" />
+          <animate attributeName="opacity" values=".8;0" dur="3s" begin="1.5s" repeatCount="indefinite" />
+        </circle>
+        <circle cx="569" cy="124.5" r="6" fill="#fff" />
+        <circle cx="569" cy="124.5" r="2.6" fill="#1fb86b" />
+        <text x="583" y="112.5" fill="#fff" fontWeight="700" fontSize="12" fontFamily="Inter, sans-serif">your site</text>
+      </g>
+
+      {/* Probe markers */}
+      <ProbeMarker cx={142.7} cy={149.4} label="Los Angeles" ms="148 ms" arcId="a-losangeles" delay="0s" labelY={165.4} msY={178.4} />
+      <ProbeMarker cx={347} cy={355.5} label="São Paulo" ms="212 ms" arcId="a-saopaulo" delay="1.1s" labelY={371.5} msY={384.5} />
+      <ProbeMarker cx={510.4} cy={92.5} label="Frankfurt" ms="34 ms" arcId="a-frankfurt" delay="2.2s" labelY={78.5} msY={65.5} />
+      <ProbeMarker cx={540.7} cy={392.7} label="Cape Town" ms="301 ms" arcId="a-capetown" delay="3.3s" labelY={408.7} msY={421.7} />
+      <ProbeMarker cx={807.1} cy={266.5} label="Singapore" ms="96 ms" arcId="a-singapore" delay="4.4s" labelY={282.5} msY={295.5} />
+      <ProbeMarker cx={927.6} cy={392.5} label="Sydney" ms="173 ms" arcId="a-sydney" delay="5.5s" labelY={408.5} msY={421.5} />
+    </svg>
+  );
+}
+
+// Probe marker component
+function ProbeMarker({ cx, cy, label, ms, arcId, delay, labelY, msY }: {
+  cx: number; cy: number; label: string; ms: string; arcId: string; delay: string; labelY: number; msY: number;
+}) {
+  return (
+    <g>
+      <circle cx={cx} cy={cy} r="4" fill="#fff" />
+      <circle cx={cx} cy={cy} r="3" fill="none" stroke="rgba(255,255,255,0.6)" opacity="0">
+        <animate attributeName="r" values="3;16;16" keyTimes="0;.12;1" dur="9s" begin={delay} repeatCount="indefinite" />
+        <animate attributeName="opacity" values="0;0.9;0;0" keyTimes="0;.01;.12;1" dur="9s" begin={delay} repeatCount="indefinite" />
+      </circle>
+      <circle r="3" fill="#fff" opacity="0">
+        <animateMotion dur="9s" begin={delay} repeatCount="indefinite" keyPoints="0;1;1" keyTimes="0;.22;1" calcMode="linear">
+          <mpath href={`#${arcId}`} />
+        </animateMotion>
+        <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;.01;.02;.21;.22;1" dur="9s" begin={delay} repeatCount="indefinite" />
+      </circle>
+      <circle r="3" fill="rgba(255,255,255,0.7)" opacity="0">
+        <animateMotion dur="9s" begin={delay} repeatCount="indefinite" keyPoints="1;1;0;0" keyTimes="0;.3;.5;1" calcMode="linear">
+          <mpath href={`#${arcId}`} />
+        </animateMotion>
+        <animate attributeName="opacity" values="0;0;0;1;1;0;0" keyTimes="0;.3;.31;.32;.49;.5;1" dur="9s" begin={delay} repeatCount="indefinite" />
+      </circle>
+      <text x={cx} y={labelY} textAnchor="middle" fill="#fff" fontSize="11" fontFamily="Inter, sans-serif" fontWeight="600">{label}</text>
+      <text x={cx} y={msY} textAnchor="middle" fill="#fff" fontSize="11" fontFamily="Inter, sans-serif" fontWeight="700" opacity="0">
+        {ms}
+        <animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;.5;.54;.92;1" dur="9s" begin={delay} repeatCount="indefinite" />
+      </text>
+    </g>
   );
 }
 
