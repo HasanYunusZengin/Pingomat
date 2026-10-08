@@ -306,6 +306,8 @@ a {
   border-radius: 16px;
   box-shadow: 0 20px 60px rgba(18, 38, 63, 0.12);
   overflow: hidden;
+  pointer-events: none;
+  cursor: default;
 }
 
 .dashboard-header {
@@ -357,12 +359,8 @@ a {
   padding: 18px 28px;
   border-top: 1px solid var(--line);
   font-size: 14px;
-  transition: all 0.2s ease;
-}
-
-.dash-row:hover {
-  background: var(--gray-50);
-  padding-left: 32px;
+  pointer-events: none;
+  cursor: default;
 }
 
 .status-badge {
@@ -898,9 +896,6 @@ a {
   }
   .dash-row .strip {
     display: none;
-  }
-  .dash-row:hover {
-    padding-left: 20px;
   }
   .section {
     padding: 56px 0;
