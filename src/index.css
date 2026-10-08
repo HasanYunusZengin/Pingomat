@@ -63,15 +63,13 @@ a {
   text-decoration: none;
 }
 
-/* Header - Fixed floating dock */
+/* Header - Sticky floating dock */
 .header {
-  position: fixed;
+  position: sticky;
   top: 16px;
-  left: 50%;
-  transform: translateX(-50%);
   z-index: 1000;
-  width: calc(100% - 40px);
-  max-width: 1200px;
+  margin: 16px auto;
+  width: min(90%, 1100px);
   transition: all 0.3s ease;
 }
 
@@ -179,13 +177,13 @@ a {
   font-size: 14px;
 }
 
-/* Hero - Starts from top, no white space */
+/* Hero - Compact, no excess height */
 .hero {
   background: linear-gradient(135deg, #139a56 0%, #1fb86b 40%, #22c55e 100%);
   padding: 0;
   overflow: hidden;
   position: relative;
-  padding-top: 112px; /* header height (64px) + top spacing (16px) + gap (32px) */
+  padding-top: 16px;
 }
 
 .hero::before {
@@ -204,14 +202,12 @@ a {
   grid-template-columns: 1fr 1.5fr;
   max-width: 1600px;
   margin: 0 auto;
-  align-items: center;
-  min-height: 600px;
   position: relative;
   z-index: 1;
 }
 
 .hero-text {
-  padding: 0 20px 72px 40px;
+  padding: 24px 20px 60px 40px;
   position: relative;
   z-index: 2;
 }
@@ -285,8 +281,7 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 40px 40px 40px 20px;
-  min-height: 600px;
+  padding: 20px 40px 40px 20px;
   overflow: visible;
 }
 
@@ -840,7 +835,7 @@ a {
     grid-template-columns: 1fr;
   }
   .hero-text {
-    padding: 0 24px 40px;
+    padding: 24px 24px 40px;
     text-align: center;
   }
   .hero-lead {
@@ -851,7 +846,6 @@ a {
     justify-content: center;
   }
   .hero-map {
-    min-height: 400px;
     padding: 30px 20px;
   }
   .feature-grid {
@@ -919,7 +913,6 @@ a {
     align-items: center;
   }
   .hero-map {
-    min-height: 300px;
     padding: 20px 10px;
   }
 }
