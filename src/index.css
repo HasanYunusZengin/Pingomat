@@ -300,14 +300,14 @@ a {
 }
 
 .dashboard-section .container {
-  max-width: 1150px;
+  max-width: 1600px;
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 40px;
 }
 
 .dashboard-showcase {
   display: grid;
-  grid-template-columns: 1fr 1.2fr;
+  grid-template-columns: 0.85fr 1.35fr;
   gap: 48px;
   align-items: center;
 }
