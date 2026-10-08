@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 function App() {
   const [scrolled, setScrolled] = useState(false);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -16,6 +17,14 @@ function App() {
     setOpenFaq(openFaq === index ? null : index);
   };
 
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
+
+  const closeMenu = () => {
+    setMenuOpen(false);
+  };
+
   return (
     <>
       <main id="top">
@@ -24,7 +33,7 @@ function App() {
           {/* Header - Floating inside hero */}
           <header className={`header ${scrolled ? 'scrolled' : ''}`}>
             <div className="header-inner">
-              <a className="logo" href="#top">
+              <a className="logo" href="#top" onClick={closeMenu}>
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 100" height="48" role="img" aria-label="Pingomat">
                   <title>Pingomat</title>
                   <desc>Pingomat web sitesi izleme logosu: küre üzerinde kalp atışı çizgisi ve canlı durum noktası</desc>
@@ -50,6 +59,22 @@ function App() {
                 <a href="#faq">FAQ</a>
               </nav>
               <a className="btn btn-secondary btn-sm" href="#">Sign in</a>
+              <button className="mobile-menu-toggle" onClick={toggleMenu} aria-label="Toggle menu">
+                <span className={`hamburger ${menuOpen ? 'active' : ''}`}>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </span>
+              </button>
+            </div>
+            {/* Mobile Menu Dropdown */}
+            <div className={`mobile-menu ${menuOpen ? 'open' : ''}`}>
+              <nav className="mobile-nav">
+                <a href="#features" onClick={closeMenu}>Features</a>
+                <a href="#how" onClick={closeMenu}>How it works</a>
+                <a href="#alerts" onClick={closeMenu}>Alerts</a>
+                <a href="#faq" onClick={closeMenu}>FAQ</a>
+              </nav>
             </div>
           </header>
 
