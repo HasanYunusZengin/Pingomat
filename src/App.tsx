@@ -89,11 +89,11 @@ function App() {
               <div className="dashboard-text">
                 <span className="dashboard-badge">
                   <i className="fas fa-signal"></i>
-                  LIVE INFRASTRUCTURE STATUS
+                  PINGOMAT MONITORING
                 </span>
-                <h2 className="dashboard-headline">Stop Guessing Outages—Act on Live Performance Data</h2>
+                <h2 className="dashboard-headline">Simple &amp; Reliable Website Monitoring</h2>
                 <p className="dashboard-description">
-                  Turn raw server metrics into actionable insights. Prove your uptime SLA to clients and resolve silent degradations before your users ever notice a slowdown.
+                  Keep track of your websites and services continuously. Get notified the exact moment something breaks before it impacts your customers.
                 </p>
                 <ul className="dashboard-features">
                   <li>
@@ -101,7 +101,7 @@ function App() {
                       <i className="fas fa-check"></i>
                     </span>
                     <div>
-                      <strong>30-Day Historical Trends:</strong> Inspect daily downtime bars and verify your 99.9% uptime SLA at a glance.
+                      <strong>Multi-Location Checks:</strong> Monitor your site from multiple global locations to verify uptime and eliminate false alarms.
                     </div>
                   </li>
                   <li>
@@ -109,7 +109,7 @@ function App() {
                       <i className="fas fa-check"></i>
                     </span>
                     <div>
-                      <strong>Smart Content Verification:</strong> Confirm that key page elements (like "Add to cart") actually render, beyond simple HTTP status codes.
+                      <strong>Instant Slack &amp; Email Alerts:</strong> Receive immediate notifications on your preferred communication channels as soon as an outage occurs.
                     </div>
                   </li>
                   <li>
@@ -117,7 +117,7 @@ function App() {
                       <i className="fas fa-check"></i>
                     </span>
                     <div>
-                      <strong>Unified Health Metrics:</strong> See active monitors, average latency, and overall operational status consolidated in a single view.
+                      <strong>Clear Speed &amp; Uptime History:</strong> Keep a transparent record of your site's response times, latency, and overall availability over time.
                     </div>
                   </li>
                 </ul>

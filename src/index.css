@@ -299,10 +299,16 @@ a {
   padding: 80px 0;
 }
 
+.dashboard-section .container {
+  max-width: 1150px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
 .dashboard-showcase {
   display: grid;
   grid-template-columns: 1fr 1.2fr;
-  gap: 40px;
+  gap: 48px;
   align-items: center;
 }
 
@@ -311,6 +317,8 @@ a {
   display: flex;
   flex-direction: column;
   gap: 20px;
+  padding-left: 0;
+  margin-left: 0;
 }
 
 .dashboard-badge {
@@ -389,12 +397,11 @@ a {
 .dashboard-card-wrapper {
   width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
 }
 
 .dashboard-mock {
   width: 100%;
-  max-width: 620px;
   background: #fff;
   border: 1px solid var(--line);
   border-radius: 16px;
@@ -447,9 +454,9 @@ a {
 
 .dash-row {
   display: grid;
-  grid-template-columns: 80px 1fr 200px 100px;
+  grid-template-columns: 80px 1fr 220px 80px;
   align-items: center;
-  gap: 16px;
+  gap: 20px;
   padding: 18px 28px;
   border-top: 1px solid var(--line);
   font-size: 14px;
@@ -501,6 +508,8 @@ a {
   gap: 2px;
   height: 20px;
   align-items: stretch;
+  width: 100%;
+  min-width: 0;
 }
 
 .strip i {
@@ -508,6 +517,7 @@ a {
   border-radius: 3px;
   background: var(--primary);
   transition: all 0.2s ease;
+  min-width: 0;
 }
 
 .strip i.r {
@@ -523,6 +533,8 @@ a {
   flex-direction: column;
   align-items: flex-end;
   gap: 4px;
+  text-align: right;
+  min-width: 75px;
 }
 
 .uptime-num {
@@ -530,12 +542,15 @@ a {
   font-weight: 700;
   color: var(--navy);
   font-size: 16px;
+  text-align: right;
+  white-space: nowrap;
 }
 
 .uptime-label {
   font-size: 11px;
   color: var(--mute);
   font-weight: 500;
+  text-align: right;
 }
 
 /* Sections */
@@ -1006,6 +1021,8 @@ a {
   .dashboard-text {
     order: 1;
     text-align: center;
+    padding-left: 0;
+    margin-left: 0;
   }
   
   .dashboard-badge {
@@ -1018,10 +1035,22 @@ a {
   
   .dashboard-card-wrapper {
     order: 2;
+    justify-content: center;
   }
   
   .dashboard-mock {
+    width: 100%;
     max-width: 100%;
+  }
+  
+  .dash-row {
+    grid-template-columns: 60px 1fr 70px;
+    gap: 12px;
+    padding: 14px 16px;
+  }
+  
+  .dash-row .strip {
+    display: none;
   }
   
   /* Feature cards - Horizontal carousel on mobile */
