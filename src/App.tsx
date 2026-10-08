@@ -79,7 +79,7 @@ function App() {
               <div className="dashboard-header">
                 <div className="dashboard-status">
                   <i className="fas fa-shield-check"></i>
-                  <span>System Status</span>
+                  <span>All services operational</span>
                 </div>
                 <div className="dashboard-stats">
                   <div className="stat-item">
