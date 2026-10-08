@@ -25,7 +25,7 @@ function App() {
           <header className={`header ${scrolled ? 'scrolled' : ''}`}>
             <div className="header-inner">
               <a className="logo" href="#top">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 100" height="36" role="img" aria-label="Pingomat">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 100" height="48" role="img" aria-label="Pingomat">
                   <title>Pingomat</title>
                   <desc>Pingomat web sitesi izleme logosu: küre üzerinde kalp atışı çizgisi ve canlı durum noktası</desc>
                   <rect x="8" y="10" width="80" height="80" rx="20" fill="#17213A"/>

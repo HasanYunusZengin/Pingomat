@@ -65,10 +65,11 @@ a {
 
 /* Header - Floating inside hero */
 .header {
-  position: sticky;
+  position: fixed !important;
   top: 16px;
-  z-index: 1000;
-  margin: 16px auto 36px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
   width: min(90%, 1100px);
   transition: all 0.3s ease;
 }
@@ -100,9 +101,9 @@ a {
 }
 
 .logo svg {
-  height: 36px;
+  height: 48px;
   width: auto;
-  max-width: 200px;
+  max-width: 240px;
 }
 
 
@@ -857,8 +858,7 @@ a {
     display: none;
   }
   .header {
-    width: calc(100% - 24px);
-    margin: 0 auto 16px;
+    width: min(95%, 1100px);
   }
   .header-inner {
     justify-content: space-between;
