@@ -63,21 +63,21 @@ a {
   text-decoration: none;
 }
 
-/* Header - Sticky floating dock */
+/* Header - Floating inside hero */
 .header {
   position: sticky;
   top: 16px;
   z-index: 1000;
-  margin: 16px auto;
+  margin: 0 auto 20px;
   width: min(90%, 1100px);
   transition: all 0.3s ease;
 }
 
 .header-inner {
-  background: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(12px);
   border-radius: 16px;
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.4);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
   padding: 0 32px;
   display: flex;
@@ -88,7 +88,7 @@ a {
 }
 
 .header.scrolled .header-inner {
-  background: rgba(255, 255, 255, 0.75);
+  background: rgba(255, 255, 255, 0.95);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
 }
 
@@ -99,9 +99,9 @@ a {
 }
 
 .logo svg {
-  height: 32px;
+  height: 36px;
   width: auto;
-  max-width: 180px;
+  max-width: 200px;
 }
 
 
@@ -177,13 +177,12 @@ a {
   font-size: 14px;
 }
 
-/* Hero - Compact, no excess height */
+/* Hero - Starts from top, no white space */
 .hero {
   background: linear-gradient(135deg, #139a56 0%, #1fb86b 40%, #22c55e 100%);
   padding: 0;
   overflow: hidden;
   position: relative;
-  padding-top: 16px;
 }
 
 .hero::before {
@@ -207,7 +206,7 @@ a {
 }
 
 .hero-text {
-  padding: 24px 20px 60px 40px;
+  padding: 0 20px 60px 40px;
   position: relative;
   z-index: 2;
 }
@@ -281,7 +280,7 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 20px 40px 40px 20px;
+  padding: 0 40px 40px 20px;
   overflow: visible;
 }
 
@@ -833,7 +832,7 @@ a {
     grid-template-columns: 1fr;
   }
   .hero-text {
-    padding: 24px 24px 40px;
+    padding: 0 24px 40px;
     text-align: center;
   }
   .hero-lead {
@@ -844,7 +843,7 @@ a {
     justify-content: center;
   }
   .hero-map {
-    padding: 30px 20px;
+    padding: 20px 20px 40px;
   }
   .feature-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -858,6 +857,7 @@ a {
   }
   .header {
     width: calc(100% - 24px);
+    margin: 0 auto 16px;
   }
   .header-inner {
     justify-content: space-between;
