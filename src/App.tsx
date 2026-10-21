@@ -1,7 +1,33 @@
 import { useEffect, useState } from 'react';
-import { Routes, Route, Link } from 'react-router-dom';
+import { Routes, Route, Link, useLocation } from 'react-router-dom';
 import StatusPage from './StatusPage';
 import Navbar from './Navbar';
+
+// ScrollToTop Component - Handles anchor links and page scrolling
+function ScrollToTop() {
+  const { pathname, hash } = useLocation();
+
+  useEffect(() => {
+    // If there's a hash, scroll to that element
+    if (hash) {
+      // Remove the '#' from hash
+      const id = hash.replace('#', '');
+      const element = document.getElementById(id);
+      
+      if (element) {
+        // Small timeout to ensure DOM is fully rendered
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 100);
+      }
+    } else {
+      // No hash, scroll to top
+      window.scrollTo(0, 0);
+    }
+  }, [pathname, hash]);
+
+  return null;
+}
 
 function App() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
@@ -11,8 +37,10 @@ function App() {
   };
 
   return (
-    <Routes>
-      <Route path="/status" element={<StatusPage />} />
+    <>
+      <ScrollToTop />
+      <Routes>
+        <Route path="/status" element={<StatusPage />} />
       <Route path="/" element={
     <>
       <main id="top">
@@ -275,6 +303,7 @@ function App() {
     </>
       } />
     </Routes>
+    </>
   );
 }
 
