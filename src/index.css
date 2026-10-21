@@ -1437,6 +1437,142 @@ a {
   color: #dc2626;
 }
 
+/* Status Dashboard Mock - Ana Sayfa ile Birebir Aynı */
+.status-dashboard-mock {
+  max-width: 1000px;
+  margin: 0 auto;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(18, 38, 63, 0.12);
+  overflow: hidden;
+}
+
+.status-dashboard-header {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+  color: #fff;
+  padding: 24px 28px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.status-dashboard-status {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.status-dashboard-status i {
+  font-size: 20px;
+}
+
+.status-dashboard-stats {
+  display: flex;
+  gap: 32px;
+}
+
+.status-stat-item {
+  text-align: center;
+}
+
+.status-stat-value {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.status-stat-label {
+  font-size: 12px;
+  opacity: 0.9;
+  font-weight: 500;
+}
+
+.status-dashboard-content {
+  padding: 0;
+}
+
+.status-dash-row {
+  display: grid;
+  grid-template-columns: 80px 1fr 200px 100px;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 28px;
+  border-top: 1px solid var(--line);
+  font-size: 14px;
+  transition: all 0.2s ease;
+  pointer-events: none;
+  cursor: default;
+}
+
+.status-dash-row:first-child {
+  border-top: 0;
+}
+
+.status-service-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.status-service-info b {
+  font-weight: 600;
+  color: var(--navy);
+  font-size: 15px;
+}
+
+.status-service-info small {
+  color: var(--mute);
+  font-size: 12px;
+}
+
+.status-strip {
+  display: flex;
+  gap: 2px;
+  height: 20px;
+  align-items: stretch;
+}
+
+.status-strip i {
+  flex: 1;
+  border-radius: 3px;
+  background: var(--primary);
+  transition: all 0.2s ease;
+}
+
+.status-strip i.r {
+  background: var(--danger);
+}
+
+.status-strip i.y {
+  background: var(--warning);
+}
+
+.status-uptime-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+}
+
+.status-uptime-num {
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+  color: var(--navy);
+  font-size: 16px;
+}
+
+.status-uptime-label {
+  font-size: 11px;
+  color: var(--mute);
+  font-weight: 500;
+}
+
 /* Status Page Responsive */
 @media (max-width: 768px) {
   .status-main {
@@ -1481,6 +1617,53 @@ a {
 
   .incident-meta {
     gap: 12px;
+  }
+
+  /* Status Dashboard Mock Responsive */
+  .status-dashboard-header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+  }
+
+  .status-dashboard-status {
+    font-size: 14px;
+  }
+
+  .status-dashboard-stats {
+    width: 100%;
+    justify-content: space-around;
+    gap: 20px;
+  }
+
+  .status-stat-value {
+    font-size: 20px;
+  }
+
+  .status-stat-label {
+    font-size: 11px;
+  }
+
+  .status-dash-row {
+    grid-template-columns: 70px 1fr 90px;
+    padding: 16px 20px;
+    gap: 12px;
+  }
+
+  .status-dash-row .status-strip {
+    display: none;
+  }
+
+  .status-service-info b {
+    font-size: 14px;
+  }
+
+  .status-service-info small {
+    font-size: 11px;
+  }
+
+  .status-uptime-num {
+    font-size: 14px;
   }
 }
 

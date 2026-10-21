@@ -21,49 +21,49 @@ function StatusPage() {
     setMenuOpen(false);
   };
 
-  // Servis verileri
+  // Servis verileri - Tümü UP/Operational
   const services = [
     {
       name: 'API Gateway',
-      status: 'operational',
-      responseTime: 45,
-      uptime: 99.99,
-      description: 'Main API endpoint for all services'
+      url: 'https://api.pingomat.com.tr/',
+      status: 'UP',
+      uptime: '99.99%',
+      pattern: 0
     },
     {
       name: 'Web Application',
-      status: 'operational',
-      responseTime: 128,
-      uptime: 99.98,
-      description: 'Primary web application interface'
+      url: 'https://www.pingomat.com.tr/',
+      status: 'UP',
+      uptime: '99.98%',
+      pattern: 1
     },
     {
       name: 'Database Cluster',
-      status: 'operational',
-      responseTime: 12,
-      uptime: 99.99,
-      description: 'PostgreSQL database servers'
+      url: 'PostgreSQL · Port 5432',
+      status: 'UP',
+      uptime: '100%',
+      pattern: 2
     },
     {
       name: 'CDN & Static Assets',
-      status: 'operational',
-      responseTime: 23,
-      uptime: 100.00,
-      description: 'Content delivery network'
+      url: 'https://cdn.pingomat.com.tr/',
+      status: 'UP',
+      uptime: '100%',
+      pattern: 3
     },
     {
       name: 'Email Service',
-      status: 'degraded',
-      responseTime: 342,
-      uptime: 99.40,
-      description: 'Transactional email delivery'
+      url: 'SMTP · Port 587',
+      status: 'UP',
+      uptime: '99.95%',
+      pattern: 4
     },
     {
       name: 'Monitoring Dashboard',
-      status: 'operational',
-      responseTime: 89,
-      uptime: 99.95,
-      description: 'Real-time monitoring interface'
+      url: 'https://app.pingomat.com.tr/',
+      status: 'UP',
+      uptime: '99.97%',
+      pattern: 5
     }
   ];
 
@@ -107,32 +107,6 @@ function StatusPage() {
     }
   ];
 
-  const getStatusColor = (status: string) => {
-    switch (status) {
-      case 'operational':
-        return 'status-color-operational';
-      case 'degraded':
-        return 'status-color-degraded';
-      case 'down':
-        return 'status-color-down';
-      default:
-        return 'status-color-unknown';
-    }
-  };
-
-  const getStatusText = (status: string) => {
-    switch (status) {
-      case 'operational':
-        return 'Operational';
-      case 'degraded':
-        return 'Degraded Performance';
-      case 'down':
-        return 'Down';
-      default:
-        return 'Unknown';
-    }
-  };
-
   const getImpactBadge = (impact: string) => {
     switch (impact) {
       case 'none':
@@ -147,8 +121,6 @@ function StatusPage() {
         return { color: 'impact-none', text: 'Unknown' };
     }
   };
-
-  const allOperational = services.every(s => s.status === 'operational');
 
   return (
     <div className="status-page">
@@ -181,7 +153,7 @@ function StatusPage() {
             <Link to="/#alerts">Alerts</Link>
             <Link to="/#faq">FAQ</Link>
           </nav>
-          <a className="btn btn-secondary btn-sm" href="#">Sign in</a>
+          <Link className="btn btn-secondary btn-sm" to="/">Sign in</Link>
           <button className="mobile-menu-toggle" onClick={toggleMenu} aria-label="Toggle menu">
             <span className={`hamburger ${menuOpen ? 'active' : ''}`}>
               <span></span>
@@ -205,29 +177,19 @@ function StatusPage() {
       <main className="status-main">
         <div className="status-container">
           {/* Status Banner */}
-          <div className={`status-banner ${allOperational ? 'status-banner-success' : 'status-banner-warning'}`}>
+          <div className="status-banner status-banner-success">
             <div className="status-banner-content">
               <div className="status-banner-icon">
-                {allOperational ? (
-                  <i className="fas fa-check-circle"></i>
-                ) : (
-                  <i className="fas fa-exclamation-triangle"></i>
-                )}
+                <i className="fas fa-check-circle"></i>
               </div>
               <div className="status-banner-text">
-                <h1>
-                  {allOperational ? 'All Systems Operational' : 'Some Systems Experiencing Issues'}
-                </h1>
-                <p>
-                  {allOperational 
-                    ? 'All services are running normally. Last checked: Just now'
-                    : 'Some services are experiencing degraded performance. We are monitoring the situation.'}
-                </p>
+                <h1>All Systems Operational</h1>
+                <p>All services are running normally. Last checked: Just now</p>
               </div>
             </div>
           </div>
 
-          {/* Services Section */}
+          {/* Services Status Card - Ana Sayfa Tasarımı */}
           <section className="status-section">
             <div className="status-section-header">
               <h2>
@@ -238,34 +200,44 @@ function StatusPage() {
                 {services.length} Services
               </span>
             </div>
-            <div className="services-list">
-              {services.map((service, index) => (
-                <div key={index} className="service-card">
-                  <div className="service-card-header">
-                    <div className="service-info">
-                      <div className="service-name-row">
-                      <div className={`service-status-indicator ${getStatusColor(service.status)}`}>
-                        <div className="service-status-pulse"></div>
-                      </div>                        <h3>{service.name}</h3>
-                      </div>
-                      <p className="service-description">{service.description}</p>
-                    </div>
-                    <div className="service-metrics">
-                      <div className="service-metric">
-                        <span className="service-metric-label">Response Time</span>
-                        <span className="service-metric-value">{service.responseTime}ms</span>
-                      </div>
-                      <div className="service-metric">
-                        <span className="service-metric-label">Uptime</span>
-                        <span className="service-metric-value">{service.uptime}%</span>
-                      </div>
-                      <div className={`service-status-badge ${service.status}`}>
-                        {getStatusText(service.status)}
-                      </div>
-                    </div>
+            
+            {/* Ana Kart - Dashboard Mock Tasarımı */}
+            <div className="status-dashboard-mock">
+              {/* Yeşil Header Bar */}
+              <div className="status-dashboard-header">
+                <div className="status-dashboard-status">
+                  <i className="fas fa-shield-check"></i>
+                  <span>All services operational</span>
+                </div>
+                <div className="status-dashboard-stats">
+                  <div className="status-stat-item">
+                    <div className="status-stat-value">99.9%</div>
+                    <div className="status-stat-label">Uptime</div>
+                  </div>
+                  <div className="status-stat-item">
+                    <div className="status-stat-value">142ms</div>
+                    <div className="status-stat-label">Avg Response</div>
+                  </div>
+                  <div className="status-stat-item">
+                    <div className="status-stat-value">6/6</div>
+                    <div className="status-stat-label">Monitors</div>
                   </div>
                 </div>
-              ))}
+              </div>
+
+              {/* Servis Satırları */}
+              <div className="status-dashboard-content">
+                {services.map((service, index) => (
+                  <StatusRow 
+                    key={index}
+                    status={service.status}
+                    name={service.name}
+                    url={service.url}
+                    uptime={service.uptime}
+                    pattern={service.pattern}
+                  />
+                ))}
+              </div>
             </div>
           </section>
 
@@ -334,6 +306,37 @@ function StatusPage() {
           <span>Simple website monitoring from multiple locations</span>
         </div>
       </footer>
+    </div>
+  );
+}
+
+// Status Row Component - Ana Sayfadaki DashRow ile Birebir Aynı
+function StatusRow({ status, name, url, uptime, pattern }: {
+  status: string; name: string; url: string; uptime: string; pattern: number;
+}) {
+  const strips = Array.from({ length: 24 }, (_, i) => {
+    // Her pattern için farklı bar desenleri
+    if (pattern === 0 && i === 7) return 'y'; // Sarı uyarı
+    if (pattern === 4 && i >= 20) return 'y'; // Son günlerde sarı
+    return ''; // Yeşil (default)
+  });
+
+  return (
+    <div className="status-dash-row">
+      <span className={`status-badge ${status === 'UP' ? 'up' : 'down'}`}>{status}</span>
+      <div className="status-service-info">
+        <b>{name}</b>
+        <small>{url}</small>
+      </div>
+      <div className="status-strip">
+        {strips.map((cls, i) => (
+          <i key={i} className={cls}></i>
+        ))}
+      </div>
+      <div className="status-uptime-info">
+        <span className="status-uptime-num">{uptime}</span>
+        <span className="status-uptime-label">30 days</span>
+      </div>
     </div>
   );
 }
