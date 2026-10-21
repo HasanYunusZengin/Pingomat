@@ -1,4 +1,6 @@
 import { useEffect, useState } from 'react';
+import { Routes, Route, Link, useLocation } from 'react-router-dom';
+import StatusPage from './StatusPage';
 
 function App() {
   const [scrolled, setScrolled] = useState(false);
@@ -26,6 +28,9 @@ function App() {
   };
 
   return (
+    <Routes>
+      <Route path="/status" element={<StatusPage />} />
+      <Route path="/" element={
     <>
       <main id="top">
         {/* Hero - Full Green Banner */}
@@ -53,10 +58,11 @@ function App() {
                 </svg>
               </a>
               <nav className="nav-links">
-                <a href="#features">Features</a>
-                <a href="#how">How it works</a>
-                <a href="#alerts">Alerts</a>
-                <a href="#faq">FAQ</a>
+                <Link to="/#features">Features</Link>
+                <Link to="/#how">How it works</Link>
+                <Link to="/#alerts">Alerts</Link>
+                <Link to="/#faq">FAQ</Link>
+                <Link to="/status">Status</Link>
               </nav>
               <a className="btn btn-secondary btn-sm" href="#">Sign in</a>
               <button className="mobile-menu-toggle" onClick={toggleMenu} aria-label="Toggle menu">
@@ -70,10 +76,11 @@ function App() {
             {/* Mobile Menu Dropdown */}
             <div className={`mobile-menu ${menuOpen ? 'open' : ''}`}>
               <nav className="mobile-nav">
-                <a href="#features" onClick={closeMenu}>Features</a>
-                <a href="#how" onClick={closeMenu}>How it works</a>
-                <a href="#alerts" onClick={closeMenu}>Alerts</a>
-                <a href="#faq" onClick={closeMenu}>FAQ</a>
+                <Link to="/#features" onClick={closeMenu}>Features</Link>
+                <Link to="/#how" onClick={closeMenu}>How it works</Link>
+                <Link to="/#alerts" onClick={closeMenu}>Alerts</Link>
+                <Link to="/#faq" onClick={closeMenu}>FAQ</Link>
+                <Link to="/status" onClick={closeMenu}>Status</Link>
               </nav>
             </div>
           </header>
@@ -330,6 +337,8 @@ function App() {
         </div>
       </footer>
     </>
+      } />
+    </Routes>
   );
 }
 
