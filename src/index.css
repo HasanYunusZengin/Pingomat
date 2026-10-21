@@ -1573,6 +1573,63 @@ a {
   font-weight: 500;
 }
 
+/* Past Incidents Section */
+.past-incidents-section {
+  margin-top: 48px;
+  margin-bottom: 32px;
+}
+
+.past-incidents-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--navy);
+  margin: 0 0 24px;
+}
+
+.past-incidents-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.past-incident-day {
+  padding-bottom: 16px;
+  margin-bottom: 16px;
+  border-bottom: 1px solid var(--line);
+}
+
+.past-incident-day:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.past-incident-date {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--navy);
+  margin-bottom: 6px;
+}
+
+.past-incident-status {
+  font-size: 14px;
+  color: var(--mute);
+}
+
+/* Status Link Active State */
+.nav-links a.active {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.nav-links a.active::after {
+  width: 100%;
+  background: var(--primary);
+}
+
+.mobile-nav a.active {
+  background: rgba(31, 184, 107, 0.1);
+  color: var(--primary-dark);
+}
+
 /* Status Page Responsive */
 @media (max-width: 768px) {
   .status-main {
@@ -1664,6 +1721,19 @@ a {
 
   .status-uptime-num {
     font-size: 14px;
+  }
+
+  /* Past Incidents Responsive */
+  .past-incidents-title {
+    font-size: 18px;
+  }
+
+  .past-incident-date {
+    font-size: 14px;
+  }
+
+  .past-incident-status {
+    font-size: 13px;
   }
 }
 
